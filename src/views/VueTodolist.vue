@@ -35,7 +35,7 @@
           <hr />
           <input
             type="date"
-            class="form-control"
+            class="form-control,w-10"
             id="date"
             name="date"
             width="140px"
