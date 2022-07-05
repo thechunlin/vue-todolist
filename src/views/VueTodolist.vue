@@ -90,14 +90,6 @@ export default {
       this.todo.push(temp)
     },
     deleteTodo (i) {
-      // addDate () {
-      //   if (this.newdate === '') {
-      //     return
-      //   }
-      //   const temp = { status: false, date: this.newdate }
-      //   this.todo.push(temp)
-      //   console.table(this.todo)
-      // },
       const a = 1
       console.log(a)
       this.todo.splice(i, 1)
