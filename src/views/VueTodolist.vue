@@ -39,7 +39,7 @@
             id="date"
             name="date"
             width="140px"
-            v-bind:class="{ '': item.status }"
+            v-bind:class="{ 'bg-danger p-1': item.status }"
             v-bind:value="item.date"
             disabled
           />
