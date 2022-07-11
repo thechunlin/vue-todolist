@@ -11,14 +11,14 @@
               id="date"
               name="date"
               width="140px"
-              v-model="inputValue.date"
+              v-model="newdate"
             />
           </div>
           <input
             type="text"
             class="form-control"
             placeholder="輸入代辦事項"
-            v-model="inputValue.todo"
+            v-model="newtodo"
           />
           <button type="button" class="btn btn-info" v-on:click="addTodo">
             新增
@@ -75,21 +75,23 @@ export default {
   name: 'VueTodolistView',
   data () {
     return {
-      todo: null,
-      inputValue: {
-        todo: '',
-        date: ''
-      }
+      header: 'TodoList',
+      newtodo: '',
+      newdate: '',
+      todo: [{ status: false, text: '看電視', date: '' }]
     }
   },
-  mounted () {
-    this.todo = this.$store.getters.tododata
-  },
   methods: {
-    addTodo (newTodo) {
-      this.$store.commit('addTodo', this.inputValue)
+    addTodo () {
+      if (this.newtodo === '' || this.newdate === '') {
+        return
+      }
+      const temp = { status: false, text: this.newtodo, date: this.newdate }
+      this.todo.push(temp)
     },
     deleteTodo (i) {
+      const a = 1
+      console.log(a)
       this.todo.splice(i, 1)
     },
     finishTodo (i) {

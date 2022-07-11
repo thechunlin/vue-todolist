@@ -2,13 +2,28 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
-  },
-  getters: {
+    count: 0,
+    header: 'TodoList',
+    todo: [{ status: false, text: '看電視', date: '' }]
   },
   mutations: {
+    increment: (state) => state.count++,
+    decrement: (state) => state.count--,
+    addTodo (state, data) {
+      state.todo.push({ status: false, text: data.todo, date: data.date })
+    },
+    deleteTodo (state) {
+      state.todo.splice(state, 1)
+    }
   },
-  actions: {
+  getters: {
+    tododata (state) {
+      return state.todo
+    },
+    statedata (state) {
+      return state
+    }
   },
-  modules: {
-  }
+  actions: {},
+  modules: {}
 })
