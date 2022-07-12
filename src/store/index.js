@@ -19,6 +19,9 @@ export default createStore({
     },
     deleteTodo (state) {
       state.todo.splice(state, 1)
+    },
+    finishTodo (state, index) {
+      state.todo[index].status = !state.todo[index].status
     }
   },
   getters: {

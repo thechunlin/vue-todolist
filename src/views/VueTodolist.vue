@@ -85,6 +85,7 @@ export default {
   mounted () {
     this.todo = this.$store.getters.tododata
   },
+  computed: {},
   methods: {
     addTodo (newTodo) {
       this.$store.commit('addTodo', this.inputValue)
@@ -93,8 +94,7 @@ export default {
       this.$store.commit('deleteTodo', this.inputValue)
     },
     finishTodo (i) {
-      this.todo[i].status = !this.todo[i].status
-      console.table(this.todo)
+      this.$store.commit('finishTodo', i)
     }
   }
 }
