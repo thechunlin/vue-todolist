@@ -29,7 +29,7 @@
         <div
           class="input-group mb-3"
           v-for="(item, index) in todo"
-          v-bind:key="item.index"
+          v-bind:key="index"
         >
           <span class="input-group-text" id="basic-addon1">{{ index }}</span>
           <hr />
@@ -40,15 +40,13 @@
             name="date"
             width="140px"
             v-bind:class="{ 'bg-danger p-1, text-bg-primary': item.status }"
-            v-bind:value="item.date"
-            disabled
+            v-model="item.date"
           />
           <input
             type="text"
             class="form-control"
             v-bind:class="{ 'text-decoration-line-through': item.status }"
-            v-bind:value="item.text"
-            disabled
+            v-model="item.text"
           />
           <button
             type="button"
