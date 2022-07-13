@@ -87,6 +87,9 @@ export default {
   computed: {},
   methods: {
     addTodo (newTodo) {
+      if (this.inputValue.todo === '' || this.inputValue.date === '') {
+        return
+      }
       this.$store.commit('addTodo', this.inputValue)
     },
     deleteTodo (i) {
