@@ -90,7 +90,7 @@ export default {
       this.$store.commit('addTodo', this.inputValue)
     },
     deleteTodo (i) {
-      this.$store.commit('deleteTodo', this.inputValue)
+      this.$store.commit('deleteTodo', i)
     },
     finishTodo (i) {
       this.$store.commit('finishTodo', i)
