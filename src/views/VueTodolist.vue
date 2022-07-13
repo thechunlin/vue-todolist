@@ -76,6 +76,7 @@ export default {
   data () {
     return {
       todo: null,
+      header: 'TodoList',
       inputValue: {
         todo: '',
         date: ''
