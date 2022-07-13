@@ -22,15 +22,8 @@ export default createStore({
     finishTodo (state, index) {
       state.todo[index].status = !state.todo[index].status
     },
-    // editTodo (state, data, index) {
-    //   state.todo[index].push({ text: data.todo, date: data.date })
-    // }
-    // editTodo (state, data) {
-    //   state.todo.push({ text: data.todo, date: data.date })
-    // }
-    editTodo (state, data) {
-      state.todo.push({ text: data.todo, date: data.date })
-      state.todo.splice(state)
+    editTodo (state, { index, newValue }) {
+      state.todo[index] = newValue
     }
   },
   getters: {

@@ -51,9 +51,9 @@
           <button
             type="button"
             class="btn btn-success"
-            v-on:click="finishTodo(index)"
+            v-on:click="editTodo(index)"
           >
-            已完成
+            存檔
           </button>
           <button
             type="button"
@@ -91,6 +91,9 @@ export default {
     },
     deleteTodo (i) {
       this.$store.commit('deleteTodo', i)
+    },
+    editTodo (i) {
+      this.$store.commit('editTodo', { index: i, newValue: this.todo[i] })
     },
     finishTodo (i) {
       this.$store.commit('finishTodo', i)
