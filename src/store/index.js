@@ -8,7 +8,6 @@ const vuexLocal = new VuexPersistence({
 export default createStore({
   state: {
     count: 0,
-    header: 'TodoList',
     todo: [{ status: false, text: '看電視', date: '' }]
   },
   mutations: {
@@ -17,11 +16,21 @@ export default createStore({
     addTodo (state, data) {
       state.todo.push({ status: false, text: data.todo, date: data.date })
     },
-    deleteTodo (state) {
-      state.todo.splice(state, 1)
+    deleteTodo (state, index) {
+      state.todo.splice(index, 1)
     },
     finishTodo (state, index) {
       state.todo[index].status = !state.todo[index].status
+    },
+    // editTodo (state, data, index) {
+    //   state.todo[index].push({ text: data.todo, date: data.date })
+    // }
+    // editTodo (state, data) {
+    //   state.todo.push({ text: data.todo, date: data.date })
+    // }
+    editTodo (state, data) {
+      state.todo.push({ text: data.todo, date: data.date })
+      state.todo.splice(state)
     }
   },
   getters: {
