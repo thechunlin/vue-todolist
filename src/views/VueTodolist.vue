@@ -31,7 +31,13 @@
           v-for="(item, index) in todo"
           v-bind:key="index"
         >
-          <span class="input-group-text" id="basic-addon1">{{ index }}</span>
+          <span class="input-group-text" id="basic-addon1"
+            >{{ index
+            }}<input
+              type="checkbox"
+              class="form-check-input"
+              v-on:click="finishTodo(index)"
+          /></span>
           <hr />
           <input
             type="date"
