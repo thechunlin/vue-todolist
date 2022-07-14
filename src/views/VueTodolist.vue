@@ -120,4 +120,10 @@ export default {
     }
   }
 }
+.input-group-text {
+  .form-check-input {
+    margin-bottom: 4px;
+    margin-left: 8px;
+  }
+}
 </style>
