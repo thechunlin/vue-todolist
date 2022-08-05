@@ -28,7 +28,7 @@ jobs:
       
       - name: Install & Build
         run: |
-          npm install
+          npm install -f
           npm run build 
           
       # Runs a single command using the runners shell
