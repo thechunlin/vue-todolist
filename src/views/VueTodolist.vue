@@ -19,6 +19,7 @@
             class="form-control"
             placeholder="輸入代辦事項"
             v-model="inputValue.todo"
+            v-on:keyup.enter="addTodo"
           />
           <button type="button" class="btn btn-info" v-on:click="addTodo">
             新增
