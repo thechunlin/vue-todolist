@@ -1,5 +1,7 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <a href="https://github.com/thechunlin"
+      ><h1>MyGitHub: https://github.com/thechunlin</h1></a
+    >
   </div>
 </template>
